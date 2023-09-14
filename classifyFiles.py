@@ -31,15 +31,15 @@ def predict_image(image_path, model, device, class_names, transform):
     # Check if probabilities exceed the threshold
     threshold = 0.6
     if class_probabilities[predicted_class] < threshold:
-        predicted_class = "intermediate"
+        predicted_class = "uncertain"
 
     return predicted_class, class_probabilities
 
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = 'resnet18_trained.pth'
-    class_names = ['antrum', 'corpus']  # Update this with your actual class names
+    model_path = 'resnet18_inflamation_best.pth'
+    class_names = ['inflamed', 'noninflamed']  # Update this with your actual class names
 
     transform = transforms.Compose([
         transforms.Resize((224, 224)),

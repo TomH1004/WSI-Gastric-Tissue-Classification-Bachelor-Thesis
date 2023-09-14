@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="added xception architecture for experimentation + added some performance metrics" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="training" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TomH1004&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="72875f02-dbb0-4d65-a93d-2113b4c1d4c1" />
+        <option name="url" value="https://github.com/TomH1004/baseline_model_antrum_corpus_classification.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2TVilQVbjSOFKcKxsdz406QRVv1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/baseline_model_antrum_corpus_classification/wsi-test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\baseline_model_antrum_corpus_classification\wsi-test" />
+      <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification\dataset_backup" />
+      <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification\dataManagement" />
+      <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification\dataset_backup" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="" />
+      <created>1691134799622</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691134799622</updated>
+      <workItem from="1691134802794" duration="5438000" />
+      <workItem from="1691486473543" duration="17360000" />
+      <workItem from="1691519513268" duration="1051000" />
+      <workItem from="1691587349220" duration="640000" />
+      <workItem from="1692271553690" duration="598000" />
+      <workItem from="1692955927526" duration="49131000" />
+      <workItem from="1694167873751" duration="8248000" />
+      <workItem from="1694365841903" duration="30458000" />
+      <workItem from="1694530181198" duration="2293000" />
+      <workItem from="1694616646405" duration="374000" />
+      <workItem from="1694617300347" duration="9411000" />
+      <workItem from="1694670162230" duration="7120000" />
+    </task>
+    <task id="LOCAL-00001" summary="added some scripts to filter images">
+      <option name="closed" value="true" />
+      <created>1691139260851</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691139260851</updated>
+    </task>
+    <task id="LOCAL-00002" summary="removed images from being synced">
+      <option name="closed" value="true" />
+      <created>1691139507597</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691139507597</updated>
+    </task>
+    <task id="LOCAL-00003" summary="created new scripts to create and manage dataset">
+      <option name="closed" value="true" />
+      <created>1691489686776</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691489686776</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added training and testing files">
+      <option name="closed" value="true" />
+      <created>1691515793624</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691515793624</updated>
+    </task>
+    <task id="LOCAL-00005" summary="reworked training, validation and test process + added classification scripts">
+      <option name="closed" value="true" />
+      <created>1694167997300</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694167997300</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added .pth files to gitignore">
+      <option name="closed" value="true" />
+      <created>1694170518284</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694170518284</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".">
+      <option name="closed" value="true" />
+      <created>1694364977014</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694364977014</updated>
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <option name="closed" value="true" />
+      <created>1694365580485</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694365580485</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added training and test scripts + data management scripts">
+      <option name="closed" value="true" />
+      <created>1694366003396</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694366003396</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added xception architecture for experimentation + added some performance metrics">
+      <option name="closed" value="true" />
+      <created>1694684315072</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694684315072</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="training" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added some scripts to filter images" />
+    <MESSAGE value="removed images from being synced" />
+    <MESSAGE value="created new scripts to create and manage dataset" />
+    <MESSAGE value="added training and testing files" />
+    <MESSAGE value="reworked training, validation and test process + added classification scripts" />
+    <MESSAGE value="added .pth files to gitignore" />
+    <MESSAGE value="." />
+    <MESSAGE value="added training and test scripts + data management scripts" />
+    <MESSAGE value="added xception architecture for experimentation + added some performance metrics" />
+    <option name="LAST_COMMIT_MESSAGE" value="added xception architecture for experimentation + added some performance metrics" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/baseline_model_antrum_corpus_classification$trainModel.coverage" NAME="trainModel Coverage Results" MODIFIED="1691490987382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

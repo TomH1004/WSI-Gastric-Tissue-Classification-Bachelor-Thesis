@@ -3,7 +3,6 @@ import subprocess
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from sklearn.metrics import roc_auc_score
 from torch.utils.data import Dataset
 from torch.optim.lr_scheduler import StepLR
 from torchvision.models import resnet18
@@ -11,7 +10,7 @@ from torchvision.models.resnet import ResNet18_Weights
 from torchvision import datasets, transforms
 from testModel import get_test_metrics
 import matplotlib.pyplot as plt
-import timm
+from sklearn.metrics import roc_auc_score
 import numpy as np
 
 
@@ -24,20 +23,20 @@ def main():
     data_transforms = {
         'train': transforms.Compose([
             transforms.ToTensor(),
-            #transforms.Resize((299, 299), antialias=True),
             transforms.RandomHorizontalFlip(),
             transforms.RandomVerticalFlip(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
         'val': transforms.Compose([
             transforms.ToTensor(),
-            #transforms.Resize((299, 299), antialias=True),
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomVerticalFlip(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
     }
 
-    train_data_dir = r'C:\dataset_inflamation'
-    val_data_dir = r'C:\dataset_inflamation_validation'
+    train_data_dir = r'C:\dataset'
+    val_data_dir = r'C:\dataset_validation'
 
     image_datasets = {
         'train': datasets.ImageFolder(train_data_dir, data_transforms['train']),
@@ -45,8 +44,8 @@ def main():
     }
 
     dataloaders = {
-        'train': torch.utils.data.DataLoader(image_datasets['train'], batch_size=32, shuffle=True, num_workers=4),
-        'val': torch.utils.data.DataLoader(image_datasets['val'], batch_size=32, shuffle=False, num_workers=4)
+        'train': torch.utils.data.DataLoader(image_datasets['train'], batch_size=128, shuffle=True, num_workers=4),
+        'val': torch.utils.data.DataLoader(image_datasets['val'], batch_size=128, shuffle=False, num_workers=4)
     }
 
     dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'val']}
@@ -58,12 +57,6 @@ def main():
     model.fc = nn.Linear(num_ftrs, len(class_names))
     model = model.to(device)
 
-    # Define the model
-    #model = timm.create_model('xception', pretrained=True)
-    #num_ftrs = model.fc.in_features
-    #model.fc = nn.Linear(num_ftrs, len(class_names))
-    #model = model.to(device)
-
     criterion = nn.CrossEntropyLoss()
 
     # Observe that all parameters are being optimized
@@ -73,7 +66,7 @@ def main():
     scheduler = StepLR(optimizer, step_size=7, gamma=0.1)
 
     # Train the model
-    num_epochs = 5
+    num_epochs = 10
     best_accuracy = 0.0
 
     train_losses = []
@@ -84,7 +77,7 @@ def main():
 
     for epoch in range(num_epochs):
 
-        print(f"Epoch {epoch+1}")
+        print(f"Epoch {epoch}")
 
         for phase in ['train', 'val']:
             if phase == 'train':
@@ -95,12 +88,11 @@ def main():
             running_loss = 0.0
             corrects = 0
 
-            # Initialize lists to store true labels and output probabilities
-            true_labels = []
-            output_probs = []
-
             current_epoch_train_losses = []
             current_epoch_val_losses = []
+
+            true_labels = []
+            output_probs = []
 
             for batch_idx, (inputs, labels) in enumerate(dataloaders[phase], 1):
                 inputs, labels = inputs.to(device), labels.to(device)
@@ -111,16 +103,16 @@ def main():
                     _, preds = torch.max(outputs, 1)
                     loss = criterion(outputs, labels)
 
-                    # Store true labels and output probabilities
-                    true_labels.extend(labels.cpu().numpy())
-                    output_probs.extend(torch.nn.functional.softmax(outputs, dim=1).cpu().detach().numpy())
-
                     if phase == 'train':
                         loss.backward()
                         optimizer.step()
 
                 running_loss += loss.item() * inputs.size(0)
                 corrects += torch.sum(preds == labels.data)
+
+                # Store true labels and output probabilities
+                true_labels.extend(labels.cpu().numpy())
+                output_probs.extend(torch.nn.functional.softmax(outputs, dim=1).cpu().detach().numpy())
 
                 # Store the batch loss for the current epoch
                 if phase == 'train':
@@ -130,18 +122,18 @@ def main():
 
                 print(f"\r{phase} Batch {batch_idx}/{len(dataloaders[phase])}", end='', flush=True)
 
+            epoch_loss = running_loss / dataset_sizes[phase]
+            epoch_acc = corrects.double() / dataset_sizes[phase]
+
             # After the batch loop, compute ROC and AUC metrics
             true_labels = np.array(true_labels).reshape(-1)
-            output_probs = np.array(output_probs)[:, 1]
+            output_probs = np.array(output_probs)[:,1]  # Assuming a binary classification. Adjust index based on your number of classes
 
-            roc_auc = roc_auc_score(true_labels, output_probs, multi_class='ovo')
+            roc_auc = roc_auc_score(true_labels, output_probs,multi_class='ovo')  # Adjust 'ovo' based on your number of classes
             if phase == 'train':
                 train_roc_auc_scores.append(roc_auc)
             else:
                 val_roc_auc_scores.append(roc_auc)
-
-            epoch_loss = running_loss / dataset_sizes[phase]
-            epoch_acc = corrects.double() / dataset_sizes[phase]
 
             # Store the average loss for the current epoch
             if phase == 'train':
@@ -151,19 +143,19 @@ def main():
 
             if phase == 'val':
                 # Save the model's state dictionary after each epoch
-                model_save_path = f'resnet18_antrum_corpus_inflamation.pth'
+                model_save_path = f'resnet18_antrum_corpus.pth'
                 torch.save(model.state_dict(), model_save_path)
 
                 # Get the accuracy from the testModel.py script
                 current_accuracy, current_f1, current_precision, current_recall = get_test_metrics()
-                print(f"Accuracy on test dataset for epoch {epoch+1}: {current_accuracy:.2f}")
-                print(f"F1 score on test dataset for epoch {epoch+1}: {current_f1:.2f}")
-                print(f"Precision on test dataset for epoch {epoch+1}: {current_precision:.2f}")
-                print(f"Recall on test dataset for epoch {epoch+1}: {current_recall:.2f}")
+                print(f"Accuracy on test dataset for epoch {epoch}: {current_accuracy:.2f}")
+                print(f"F1 score on test dataset for epoch {epoch}: {current_f1:.2f}")
+                print(f"Precision on test dataset for epoch {epoch}: {current_precision:.2f}")
+                print(f"Recall on test dataset for epoch {epoch}: {current_recall:.2f}")
 
                 if current_accuracy > best_accuracy:
                     best_accuracy = current_accuracy
-                    torch.save(model.state_dict(), 'resnet18_training_best2_inflamation.pth')
+                    torch.save(model.state_dict(), 'resnet18_training_best3.pth')
 
         # Update the learning rate scheduler
         scheduler.step()

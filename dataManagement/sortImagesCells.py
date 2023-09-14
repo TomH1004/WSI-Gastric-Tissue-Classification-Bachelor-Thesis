@@ -2,13 +2,13 @@ import os
 import shutil
 
 # The root directory where the .png files are currently stored
-root_dir = 'C:/Users/tomhe/Desktop/Dataset_Sorted_Inflamation/test'
+root_dir = 'C:/Users/tomhe/Desktop/Dataset_Sorted_with_Inflamed/test'
 
 # The directory where the files should be copied to
-dst_dir = '../dataset_inflamation_test'
+dst_dir = '../dataset_wI_test'
 
 # The names of the classes (and also the subfolders)
-classes = ['inflamed', 'noninflamed']
+classes = ['antrum', 'corpus']
 
 # Initialize counters for each class
 counters = {cls: 0 for cls in classes}
