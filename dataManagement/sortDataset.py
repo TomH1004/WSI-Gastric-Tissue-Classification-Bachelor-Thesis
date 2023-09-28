@@ -3,8 +3,8 @@ import shutil
 import pandas as pd
 
 # Directories
-source_directory = 'C:/Users/tomhe/Desktop/Dataset_AntrumCorpus_With_InflamedSlides'
-target_directory = 'C:/Users/tomhe/Desktop/Dataset_Sorted_with_Inflamed'
+source_directory = 'C:/Users/tomhe/Desktop/QuPath-Antrum-Corpus-Final/tiles'
+target_directory = 'C:/Users/tomhe/Desktop/Dataset_Sorted_Final'
 csv_path = 'C:/Users/tomhe/Desktop/data_split.csv'  # Change this to the path of your CSV file
 
 

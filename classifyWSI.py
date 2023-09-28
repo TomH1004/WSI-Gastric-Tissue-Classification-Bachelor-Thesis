@@ -8,6 +8,7 @@ from PIL import Image
 import os
 import re
 import timm
+import csv
 
 import tkinter as tk
 from tkinter import filedialog
@@ -18,7 +19,7 @@ def load_model(model_path, num_classes):
     # Load the ResNet-18 model
     #model = models.resnet18()
     #model.fc = nn.Linear(model.fc.in_features, num_classes)
-    model = timm.create_model('xception', pretrained=False, num_classes=num_classes)
+    model = timm.create_model('legacy_xception', pretrained=False, num_classes=num_classes)
 
     # Load model weights
     model.load_state_dict(torch.load(model_path))
@@ -47,9 +48,9 @@ def predict_image(image_path, model, device, class_names, transform):
 def main():
     # Setup
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = 'resnet18_inflamation_xception.pth'
+    model_path = 'antrum_corpus_final_xception.pth'
 
-    class_names = ['inflamed', 'noninflamed']  # Update this with actual class names
+    class_names = ['antrum', 'corpus']  # Update this with actual class names
     num_classes = len(class_names)
 
     transform = transforms.Compose([
@@ -95,7 +96,7 @@ def main():
                 image_votes.append(probable_class)
 
             # Classify the annotation folder based on the threshold voting
-            threshold = 0.6
+            threshold = 0.75
             vote_counts = Counter(image_votes)
             total_votes = sum(vote_counts.values())
 
@@ -106,7 +107,7 @@ def main():
                     break
 
             if not classification:
-                classification = "uncertain"
+                classification = "intermediate"
 
             # Increment the counter for the predicted class of the annotation folder
             annotation_class_counter[classification] += 1

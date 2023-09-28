@@ -2,10 +2,10 @@ import os
 import shutil
 
 # The root directory where the .png files are currently stored
-root_dir = 'C:/Users/tomhe/Desktop/Dataset_Sorted_with_Inflamed/test'
+root_dir = 'C:/Users/tomhe/Desktop/Dataset_Sorted_Final/train'
 
 # The directory where the files should be copied to
-dst_dir = '../dataset_wI_test'
+dst_dir = '../dataset_final'
 
 # The names of the classes (and also the subfolders)
 classes = ['antrum', 'corpus']

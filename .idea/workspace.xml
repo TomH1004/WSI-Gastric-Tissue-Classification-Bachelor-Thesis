@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="added xception architecture for experimentation + added some performance metrics" />
+    <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="added xception architecture for experimentation + added some performance metrics">
+      <change afterPath="$PROJECT_DIR$/WSItoCSV.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classifyInflamedWSI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classifyWSITest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classifyWSI_InflamationTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataManagement/countClasses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataManagement/deleteEmptyFolders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classes_inflamation.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classes_no_intermediate.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testAnnotation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testAnnotationInflamation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testCSV.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testWSI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testWSI_inflamation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsi_classes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsi_classes_inflamation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classifyWSI.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifyWSI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressDatasets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/countImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/countImages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/dataAugmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/dataAugmentation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/removeEmptyImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/removeEmptyImages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/sortDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/sortDataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/sortImagesCells.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/sortImagesCells.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resnetTraining.py" beforeDir="false" afterPath="$PROJECT_DIR$/resnetTraining.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCompressTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/testModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainModel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainModelAccInflamation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainModelAccPretrained.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainValidateModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainValidateModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validateModel.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +96,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/baseline_model_antrum_corpus_classification/wsi-test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -103,7 +137,12 @@
       <workItem from="1694530181198" duration="2293000" />
       <workItem from="1694616646405" duration="374000" />
       <workItem from="1694617300347" duration="9411000" />
-      <workItem from="1694670162230" duration="7120000" />
+      <workItem from="1694670162230" duration="21482000" />
+      <workItem from="1694934624514" duration="3221000" />
+      <workItem from="1695196227152" duration="31412000" />
+      <workItem from="1695389027783" duration="27457000" />
+      <workItem from="1695566446195" duration="4995000" />
+      <workItem from="1695626939249" duration="15376000" />
     </task>
     <task id="LOCAL-00001" summary="added some scripts to filter images">
       <option name="closed" value="true" />
@@ -185,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694684315072</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added xception architecture for experimentation + added some performance metrics">
+      <option name="closed" value="true" />
+      <created>1694684784957</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694684784957</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +273,17 @@
     <MESSAGE value="added training and test scripts + data management scripts" />
     <MESSAGE value="added xception architecture for experimentation + added some performance metrics" />
     <option name="LAST_COMMIT_MESSAGE" value="added xception architecture for experimentation + added some performance metrics" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/resnetTraining.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/baseline_model_antrum_corpus_classification$trainModel.coverage" NAME="trainModel Coverage Results" MODIFIED="1691490987382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

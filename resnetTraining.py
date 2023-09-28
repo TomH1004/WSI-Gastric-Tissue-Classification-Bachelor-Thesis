@@ -8,10 +8,10 @@ from torch.optim.lr_scheduler import StepLR
 from torchvision.models import resnet18
 from torchvision.models.resnet import ResNet18_Weights
 from torchvision import datasets, transforms
-from testModel import get_test_metrics
+from sklearn.metrics import roc_auc_score, confusion_matrix
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_auc_score
 import numpy as np
+from sklearn.metrics import ConfusionMatrixDisplay
 
 
 def main():
@@ -29,14 +29,12 @@ def main():
         ]),
         'val': transforms.Compose([
             transforms.ToTensor(),
-            transforms.RandomHorizontalFlip(),
-            transforms.RandomVerticalFlip(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
     }
 
-    train_data_dir = r'C:\dataset'
-    val_data_dir = r'C:\dataset_validation'
+    train_data_dir = r'C:\dataset_inflamation_final'
+    val_data_dir = r'C:\dataset_inflamation_validation_final'
 
     image_datasets = {
         'train': datasets.ImageFolder(train_data_dir, data_transforms['train']),
@@ -75,9 +73,17 @@ def main():
     train_roc_auc_scores = []
     val_roc_auc_scores = []
 
+    train_accuracies = []
+    val_accuracies = []
+
+    true_labels = []
+    output_probs = []
+
+    print(f"Training has started...")
+
     for epoch in range(num_epochs):
 
-        print(f"Epoch {epoch}")
+        print(f"\nEpoch {epoch+1}")
 
         for phase in ['train', 'val']:
             if phase == 'train':
@@ -87,9 +93,6 @@ def main():
 
             running_loss = 0.0
             corrects = 0
-
-            current_epoch_train_losses = []
-            current_epoch_val_losses = []
 
             true_labels = []
             output_probs = []
@@ -114,12 +117,6 @@ def main():
                 true_labels.extend(labels.cpu().numpy())
                 output_probs.extend(torch.nn.functional.softmax(outputs, dim=1).cpu().detach().numpy())
 
-                # Store the batch loss for the current epoch
-                if phase == 'train':
-                    current_epoch_train_losses.append(loss.item())
-                else:
-                    current_epoch_val_losses.append(loss.item())
-
                 print(f"\r{phase} Batch {batch_idx}/{len(dataloaders[phase])}", end='', flush=True)
 
             epoch_loss = running_loss / dataset_sizes[phase]
@@ -127,57 +124,56 @@ def main():
 
             # After the batch loop, compute ROC and AUC metrics
             true_labels = np.array(true_labels).reshape(-1)
-            output_probs = np.array(output_probs)[:,1]  # Assuming a binary classification. Adjust index based on your number of classes
+            output_probs = np.array(output_probs)
 
-            roc_auc = roc_auc_score(true_labels, output_probs,multi_class='ovo')  # Adjust 'ovo' based on your number of classes
+            roc_auc = roc_auc_score(true_labels, output_probs[:, 1], multi_class='ovo')
             if phase == 'train':
                 train_roc_auc_scores.append(roc_auc)
+                train_losses.append(epoch_loss)
+                train_accuracies.append(epoch_acc.item())
             else:
                 val_roc_auc_scores.append(roc_auc)
-
-            # Store the average loss for the current epoch
-            if phase == 'train':
-                train_losses.append(sum(current_epoch_train_losses) / len(current_epoch_train_losses))
-            else:
-                val_losses.append(sum(current_epoch_val_losses) / len(current_epoch_val_losses))
-
-            if phase == 'val':
-                # Save the model's state dictionary after each epoch
-                model_save_path = f'resnet18_antrum_corpus.pth'
-                torch.save(model.state_dict(), model_save_path)
-
-                # Get the accuracy from the testModel.py script
-                current_accuracy, current_f1, current_precision, current_recall = get_test_metrics()
-                print(f"Accuracy on test dataset for epoch {epoch}: {current_accuracy:.2f}")
-                print(f"F1 score on test dataset for epoch {epoch}: {current_f1:.2f}")
-                print(f"Precision on test dataset for epoch {epoch}: {current_precision:.2f}")
-                print(f"Recall on test dataset for epoch {epoch}: {current_recall:.2f}")
-
-                if current_accuracy > best_accuracy:
-                    best_accuracy = current_accuracy
-                    torch.save(model.state_dict(), 'resnet18_training_best3.pth')
+                val_losses.append(epoch_loss)
+                val_accuracies.append(epoch_acc.item())
 
         # Update the learning rate scheduler
         scheduler.step()
 
-        # Save the final model state dictionary
-        print(best_accuracy)
+    # Save the final model state dictionary
+    model_save_path = os.path.join(os.getcwd(), 'inflamation_final.pth')
+    torch.save(model.state_dict(), model_save_path)
 
+    # After all epochs, calculate and display the confusion matrix for the validation set
+    cm = confusion_matrix(true_labels, np.argmax(output_probs, axis=1))
+
+    # Display the confusion matrix
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
+    disp.plot(cmap=plt.cm.Blues)
+    plt.show()
+
+    # Plot loss curves
     plt.figure()
     plt.plot(train_losses, label='Train Loss')
     plt.plot(val_losses, label='Validation Loss')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
-    plt.title('Loss Curve')
     plt.legend()
     plt.show()
 
+    # Plot ROC AUC curves
     plt.figure()
     plt.plot(train_roc_auc_scores, label='Train ROC AUC')
     plt.plot(val_roc_auc_scores, label='Validation ROC AUC')
     plt.xlabel('Epoch')
     plt.ylabel('ROC AUC')
-    plt.title('ROC AUC Curve')
+    plt.legend()
+    plt.show()
+
+    plt.figure()
+    plt.plot(train_accuracies, label='Train Accuracy')
+    plt.plot(val_accuracies, label='Validation Accuracy')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy')
     plt.legend()
     plt.show()
 

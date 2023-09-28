@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 
 # Directory where the images are stored
-base_dir = 'C:/Users/tomhe/Desktop/Dataset_Sorted/train'
+base_dir = 'C:/Users/tomhe/Desktop/QuPath-Inflammation-Final/tiles'
 
 # Initialize a counter
 removed_images = 0
