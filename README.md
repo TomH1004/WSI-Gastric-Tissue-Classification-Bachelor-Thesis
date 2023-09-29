@@ -1,23 +1,26 @@
-This guide outlines the steps to create and prepare a dataset for training.
+# Gastric and Inflammatory Classification Project
 
-## Step 1: Remove Empty Images
+## Overview
+This repository contains the codebase for a project focused on the classification of gastric regions and inflammation. Due to size limitations on GitHub, the datasets and the entire project are hosted on the university chair's file server.
 
-Run `removeEmptyImages.py` to remove images with predominantly white pixels
+## Project Structure
+The project is structured as follows:
+- 📁 **Project Root Directory**
+    - 📁 **data**
+        - 📁 **dataset**
+        - 📁 **dataset_validation**
+        - 📁 **dataset_test**
+        - 📁 **dataset_inflamation**
+        - 📁 **dataset_inflamation_validation**
+        - 📁 **dataset_inflamation_test**
+    - 📁 **csv**
+        - 📄 (multiple CSV files)
+    - 📁 **evaluation**
+        - 📄 (multiple scripts for testing purposes)
+    - 📁 **models**
+        - 📄 (all trained models)
+    - 📄 **classifyFiles.py**
+    - 📄 **classifyWSI.py**
+    - 📄 **classifyInflamedWSI.py**
+    - 📄 **trainValidateModel.py**
 
-## Step 2: Sort Images
-
-Run `sortImages.py` to automatically organize exported images into project directories
-
-## Step 3: Data Augmentation
-
-Run `dataAugmentation.py` to generate three augmented images per original image with 90-degree rotations
-
-## Clearing Project Dataset
-
-Run `clearDataset.py` to remove every image from the dataset
-
-Run `cleareAugmentedImages.py` to remove every augmented image from the dataset
-
-## Count Images
-
-Run `countImages.py` to get a count of images per directory/class
