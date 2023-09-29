@@ -15,13 +15,14 @@ def get_test_metrics():
 
     # Define data transformations for validation/testing
     test_transform = transforms.Compose([
+        # uncomment the line below incase of xception model
         #transforms.Resize((299, 299), antialias=True),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
 
     # Load the test dataset
-    test_data_dir = r'C:\dataset_inflamation_test_final'  # Path to validation dataset
+    test_data_dir = r'C:\dataset_inflamation_test_final'  # Path to test dataset
     test_dataset = datasets.ImageFolder(root=test_data_dir, transform=test_transform)
     test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
 
@@ -32,7 +33,7 @@ def get_test_metrics():
     model.fc = nn.Linear(model.fc.in_features, num_classes)
 
     # Load the saved model weights
-    model_save_path = '../models/inflamation_final.pth'
+    model_save_path = "../models/inflamation_final.pth"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.load_state_dict(torch.load(model_save_path, map_location=device))
     model.eval()

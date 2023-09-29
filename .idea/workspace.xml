@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="moved test scripts to evaluation directory" />
+    <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="improved project structure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/testModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/testModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +85,9 @@
       <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\baseline_model_antrum_corpus_classification\models" />
+      <recent name="F:\baseline_model_antrum_corpus_classification\csv" />
+      <recent name="F:\baseline_model_antrum_corpus_classification\evaluation" />
       <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification\dataManagement" />
       <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification\dataset_backup" />
     </key>
@@ -109,7 +116,7 @@
       <workItem from="1695196227152" duration="31412000" />
       <workItem from="1695389027783" duration="27457000" />
       <workItem from="1695566446195" duration="4995000" />
-      <workItem from="1695626939249" duration="18311000" />
+      <workItem from="1695626939249" duration="19075000" />
     </task>
     <task id="LOCAL-00001" summary="added some scripts to filter images">
       <option name="closed" value="true" />
@@ -223,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695983795517</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="improved project structure">
+      <option name="closed" value="true" />
+      <created>1695983950229</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695983950229</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +281,8 @@
     <MESSAGE value="refined the project and added more test scripts" />
     <MESSAGE value="minor changes" />
     <MESSAGE value="moved test scripts to evaluation directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved test scripts to evaluation directory" />
+    <MESSAGE value="improved project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved project structure" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/baseline_model_antrum_corpus_classification$trainModel.coverage" NAME="trainModel Coverage Results" MODIFIED="1691490987382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
