@@ -70,12 +70,12 @@ def main():
         print("No directory selected. Exiting.")
         return
 
-    csv_filepath = 'wsi_classes_inflamation.csv'
+    csv_filepath = '../wsi_classes_inflamation.csv'
     ground_truth = load_ground_truth(csv_filepath)
     predictions = {}
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = 'inflamation_final_xception.pth'
+    model_path = '../inflamation_final_xception.pth'
     class_names = ['inflamed', 'noninflamed']
     num_classes = len(class_names)
 

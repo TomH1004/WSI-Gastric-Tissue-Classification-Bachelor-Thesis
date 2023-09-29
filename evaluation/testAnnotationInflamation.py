@@ -1,12 +1,11 @@
 import os
 import csv
 import torch
-import timm
 import tkinter as tk
 from tkinter import filedialog
 from PIL import Image
 from collections import Counter
-from torchvision import datasets, models
+from torchvision import models
 from torch import nn
 from torchvision import transforms
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
@@ -17,7 +16,6 @@ import re
 def load_model(model_path, num_classes):
     model = models.resnet18()
     model.fc = nn.Linear(model.fc.in_features, num_classes)
-    #model = timm.create_model('xception', pretrained=False, num_classes=num_classes)
     model.load_state_dict(torch.load(model_path))
     model.eval()
     return model
@@ -27,19 +25,16 @@ def predict_image(image_path, model, device, class_names, transform):
     image_tensor = transform(image).unsqueeze(0).to(device)
     with torch.no_grad():
         output = model(image_tensor)
-        probabilities = torch.nn.functional.softmax(output, dim=1)
         _, predicted_idx = torch.max(output, 1)
     predicted_class = class_names[predicted_idx.item()]
-    predicted_probability = probabilities[0][predicted_idx].item()
-    return predicted_class, predicted_probability
+    return predicted_class
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = 'antrum_corpus_final.pth'
-    class_names = ['antrum', 'corpus', 'intermediate']
-    num_classes = 2  # Corrected to 2, as the model classifies between "antrum" and "corpus"
+    model_path = '../inflamation_final.pth'
+    class_names = ['inflamed', 'noninflamed']
+    num_classes = 2
     transform = transforms.Compose([
-        #transforms.Resize((299, 299), antialias=True),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
@@ -54,7 +49,7 @@ def main():
         return
 
     # Load ground truth classes from CSV file
-    csv_file = "image_classes.csv"
+    csv_file = "../image_classes_inflamation.csv"
     ground_truth = {}
     with open(csv_file, mode='r') as file:
         reader = csv.reader(file)
@@ -79,22 +74,14 @@ def main():
 
                     for image_file in os.listdir(annotation_path):
                         image_path = os.path.join(annotation_path, image_file)
-                        probable_class, _ = predict_image(image_path, model, device, class_names, transform)
+                        probable_class = predict_image(image_path, model, device, class_names, transform)
                         image_votes.append(probable_class)
 
-                    threshold = 0.75
-                    vote_counts = Counter(image_votes)
-                    total_votes = sum(vote_counts.values())
+                    if not image_votes:  # Check if image_votes is empty
+                        print(f"Warning: No images found for classification in {annotation_folder}. Skipping...")
+                        continue
 
-                    classification = None
-                    for class_name, count in vote_counts.items():
-                        if count / total_votes >= threshold:
-                            classification = class_name
-                            break
-
-                    if not classification:
-                        classification = "intermediate"
-
+                    classification = Counter(image_votes).most_common(1)[0][0]
                     ground_truth_class = ground_truth[wsi_folder].get(annotation_folder, "unknown")
                     all_y_true.append(ground_truth_class)
                     all_y_pred.append(classification)

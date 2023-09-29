@@ -2,10 +2,10 @@ import os
 import csv
 
 # Define the base path
-base_path = "F:\\baseline_model_antrum_corpus_classification\\wsi-test"
+base_path = "/wsi-test"
 
 # Initialize the CSV file
-csv_file = "image_classes_no_intermediate.csv"
+csv_file = "../image_classes_no_intermediate.csv"
 
 # Open the CSV file for writing
 with open(csv_file, mode='w', newline='') as file:

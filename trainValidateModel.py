@@ -1,18 +1,12 @@
 import os
-import subprocess
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from sklearn.metrics import roc_auc_score
 from torch.utils.data import Dataset
 from torch.optim.lr_scheduler import StepLR
-from torchvision.models import resnet18
-from torchvision.models.resnet import ResNet18_Weights
 from torchvision import datasets, transforms
-from testModel import get_test_metrics
 from sklearn.metrics import roc_auc_score, confusion_matrix
 import matplotlib.pyplot as plt
-import numpy as np
 from sklearn.metrics import ConfusionMatrixDisplay
 import timm
 import numpy as np

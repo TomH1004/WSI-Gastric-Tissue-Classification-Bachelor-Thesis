@@ -83,7 +83,7 @@ def load_ground_truth(csv_filepath):
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = 'antrum_corpus_final.pth'
+    model_path = '../antrum_corpus_final.pth'
     class_names = ['antrum', 'corpus', 'intermediate']  # Include 'intermediate' in class_names
     num_classes = 2
 
@@ -106,7 +106,7 @@ def main():
         print("No directory selected. Exiting.")
         return
 
-    wsi_classes_filepath = 'wsi_classes.csv'
+    wsi_classes_filepath = '../wsi_classes.csv'
     wsi_classes_dict = {}
     csv_filepath = wsi_classes_filepath
     ground_truth = load_ground_truth(csv_filepath)
