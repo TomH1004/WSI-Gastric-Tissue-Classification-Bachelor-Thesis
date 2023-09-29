@@ -32,7 +32,7 @@ def get_test_metrics():
     model.fc = nn.Linear(model.fc.in_features, num_classes)
 
     # Load the saved model weights
-    model_save_path = '../inflamation_final.pth'
+    model_save_path = '../models/inflamation_final.pth'
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.load_state_dict(torch.load(model_save_path, map_location=device))
     model.eval()

@@ -35,7 +35,7 @@ def predict_image(image_path, model, device, class_names, transform):
 # Main function
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = '../inflamation_final.pth'
+    model_path = '../models/inflamation_final.pth'
     class_names = ['inflamed', 'noninflamed']
     num_classes = len(class_names)
     transform = transforms.Compose([
@@ -54,7 +54,7 @@ def main():
         return
 
     # Load ground truth classes from CSV file
-    csv_file = "../image_classes_inflamation.csv"
+    csv_file = "../csv/image_classes_inflamation.csv"
     ground_truth = {}
     with open(csv_file, mode='r') as file:
         reader = csv.reader(file)

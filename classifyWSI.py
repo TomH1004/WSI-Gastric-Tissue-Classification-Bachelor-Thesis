@@ -48,7 +48,7 @@ def predict_image(image_path, model, device, class_names, transform):
 def main():
     # Setup
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = 'antrum_corpus_final_xception.pth'
+    model_path = 'models/antrum_corpus_final_xception.pth'
 
     class_names = ['antrum', 'corpus']  # Update this with actual class names
     num_classes = len(class_names)

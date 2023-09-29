@@ -56,7 +56,7 @@ def main():
         print("No folder selected. Exiting.")
         return
 
-    model_path = 'inflamation_final_xception.pth'
+    model_path = 'models/inflamation_final_xception.pth'
     class_names = ['inflamed', 'noninflamed']
     num_classes = len(class_names)
 
