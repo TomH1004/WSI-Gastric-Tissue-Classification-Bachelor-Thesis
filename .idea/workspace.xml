@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="improved project structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/testModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/testModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/clearAugmentedImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/clearAugmentedImages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/clearDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/clearDataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/compressData.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/compressData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/countImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/countImages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/createValidationSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/createValidationSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/sortImagesCells.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/sortImagesCells.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataManagement/sortImagesInflamation.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/sortImagesInflamation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/classifyWSITest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/classifyWSI_InflamationTest.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,11 +92,11 @@
       <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\baseline_model_antrum_corpus_classification\data" />
       <recent name="F:\baseline_model_antrum_corpus_classification\models" />
       <recent name="F:\baseline_model_antrum_corpus_classification\csv" />
       <recent name="F:\baseline_model_antrum_corpus_classification\evaluation" />
       <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification\dataManagement" />
-      <recent name="C:\Users\tomhe\PycharmProjects\baseline_model_antrum_corpus_classification\dataset_backup" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -116,7 +123,7 @@
       <workItem from="1695196227152" duration="31412000" />
       <workItem from="1695389027783" duration="27457000" />
       <workItem from="1695566446195" duration="4995000" />
-      <workItem from="1695626939249" duration="19075000" />
+      <workItem from="1695626939249" duration="20536000" />
     </task>
     <task id="LOCAL-00001" summary="added some scripts to filter images">
       <option name="closed" value="true" />
@@ -238,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695983950229</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="improved project structure">
+      <option name="closed" value="true" />
+      <created>1695985043488</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695985043488</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,7 +4,7 @@ import torch
 import os
 
 # Assuming your data is in an ImageFolder-compatible format
-data_dir = '../dataset_validation'
+data_dir = '../data/dataset_validation'
 
 # Define the same transformations you use during training
 transform = transforms.Compose([

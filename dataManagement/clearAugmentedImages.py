@@ -12,7 +12,7 @@ def delete_augmented_images(folder_path, folder_name):
 
 if __name__ == "__main__":
     main_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset_dir = os.path.join(main_dir, "../dataset_validation")
+    dataset_dir = os.path.join(main_dir, "../data/dataset_validation")
 
     if os.path.exists(dataset_dir) and os.path.isdir(dataset_dir):
         for folder_name in os.listdir(dataset_dir):

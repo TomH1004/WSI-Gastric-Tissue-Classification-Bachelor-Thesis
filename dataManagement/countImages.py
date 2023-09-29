@@ -15,9 +15,9 @@ def count_images_per_folder(root_dir):
 
 if __name__ == "__main__":
     main_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset_dir = os.path.join(main_dir, "../dataset_inflamation")
-    validation_dir = os.path.join(main_dir, "../dataset_inflamation_validation")
-    test_dir = os.path.join(main_dir, "../dataset_inflamation_test")
+    dataset_dir = os.path.join(main_dir, "../data/dataset_inflamation")
+    validation_dir = os.path.join(main_dir, "../data/dataset_inflamation_validation")
+    test_dir = os.path.join(main_dir, "../data/dataset_inflamation_test")
 
     if os.path.exists(dataset_dir) and os.path.isdir(dataset_dir):
         image_counts_dataset = count_images_per_folder(dataset_dir)
