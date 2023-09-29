@@ -2,7 +2,7 @@ import os
 import shutil
 
 # Define the path where you want to delete folders
-path = "C:\\Users\\tomhe\\Desktop\\QuPath-Antrum-Corpus-Final\\tiles"
+path = "C:\\Users\\tomhe\\Desktop\\QuPath-Inflammation-Final\\tiles"
 
 # List all folders in the specified path
 folders = os.listdir(path)
