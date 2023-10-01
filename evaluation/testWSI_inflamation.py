@@ -75,7 +75,7 @@ def main():
     predictions = {}
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = '../models/inflamation_final_xception.pth'
+    model_path = '../models/inflammation_final_xception.pth'
     class_names = ['inflamed', 'noninflamed']
     num_classes = len(class_names)
 

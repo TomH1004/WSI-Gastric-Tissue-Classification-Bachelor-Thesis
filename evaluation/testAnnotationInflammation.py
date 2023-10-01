@@ -31,7 +31,7 @@ def predict_image(image_path, model, device, class_names, transform):
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model_path = '../models/inflamation_final.pth'
+    model_path = '../models/inflammation_final.pth'
     class_names = ['inflamed', 'noninflamed']
     num_classes = 2
     transform = transforms.Compose([

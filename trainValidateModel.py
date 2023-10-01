@@ -145,7 +145,7 @@ def main():
         scheduler.step()
 
     # Save the final model state dictionary
-    model_save_path = os.path.join(os.getcwd(), 'models/inflamation_final_xception.pth')
+    model_save_path = os.path.join(os.getcwd(), 'models/inflammation_final_xception.pth')
     torch.save(model.state_dict(), model_save_path)
 
     # After all epochs, calculate and display the confusion matrix for the validation set

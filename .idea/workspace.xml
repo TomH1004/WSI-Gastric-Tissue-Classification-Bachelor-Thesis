@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="improved project structure">
+    <list default="true" id="772b4d43-df72-467b-bee7-9d1e992c108b" name="Changes" comment="comments + removing certain scripts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifyFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifyFiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/clearDataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/compressData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/countClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/countClasses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/dataAugmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/dataAugmentation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/deleteEmptyFolders.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/deleteEmptyFolders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/jsonEdit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/removeEmptyImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/removeEmptyImages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataManagement/sortDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataManagement/sortDataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/testAnnotation.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/testAnnotation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainValidateModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainValidateModel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +113,7 @@
       <workItem from="1695196227152" duration="31412000" />
       <workItem from="1695389027783" duration="27457000" />
       <workItem from="1695566446195" duration="4995000" />
-      <workItem from="1695626939249" duration="22646000" />
+      <workItem from="1695626939249" duration="23431000" />
     </task>
     <task id="LOCAL-00001" summary="added some scripts to filter images">
       <option name="closed" value="true" />
@@ -262,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695986140736</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="comments + removing certain scripts">
+      <option name="closed" value="true" />
+      <created>1696170690725</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1696170690725</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +303,8 @@
     <MESSAGE value="minor changes" />
     <MESSAGE value="moved test scripts to evaluation directory" />
     <MESSAGE value="improved project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved project structure" />
+    <MESSAGE value="comments + removing certain scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments + removing certain scripts" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/baseline_model_antrum_corpus_classification$trainModel.coverage" NAME="trainModel Coverage Results" MODIFIED="1691490987382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

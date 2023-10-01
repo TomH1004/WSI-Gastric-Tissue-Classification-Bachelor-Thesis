@@ -5,7 +5,7 @@ import shutil
 root_dir = 'C:/Users/tomhe/Desktop/Dataset_Sorted_Final/train'
 
 # The directory where the files should be copied to
-dst_dir = '../data/dataset'
+dst_dir = '../data/gastric/dataset'
 
 # The names of the classes (and also the subfolders)
 classes = ['antrum', 'corpus']

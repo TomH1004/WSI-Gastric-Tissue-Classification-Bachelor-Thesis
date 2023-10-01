@@ -5,7 +5,7 @@ import shutil
 root_dir = 'C:/Users/tomhe/Desktop/Exported_Images_Inflamation'
 
 # The directory where the files should be copied to
-dst_dir = '../data/dataset_inflamation'
+dst_dir = '../data/inflammation/dataset_inflammation'
 
 # The names of the classes (and also the subfolders)
 classes = ['inflamed', 'noninflamed']

@@ -24,8 +24,8 @@ def move_images_to_validation(src_dir, dest_dir, percentage):
 
 if __name__ == "__main__":
     main_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset_dir = os.path.join(main_dir, "../data/dataset_inflamation")
-    validation_dir = os.path.join(main_dir, "../data/dataset_inflamation_validation")
+    dataset_dir = os.path.join(main_dir, "../data/inflammation/dataset_inflammation")
+    validation_dir = os.path.join(main_dir, "../data/inflammation/dataset_inflammation_validation")
 
     if os.path.exists(dataset_dir) and os.path.isdir(dataset_dir):
         if not os.path.exists(validation_dir):
