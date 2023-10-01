@@ -1,7 +1,7 @@
 import os
 import shutil
 
-# Define the path where you want to delete folders
+# Define the path where to delete folders
 path = "C:\\Users\\tomhe\\Desktop\\QuPath-Inflammation-Final\\tiles"
 
 # List all folders in the specified path

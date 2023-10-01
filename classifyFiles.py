@@ -39,7 +39,7 @@ def predict_image(image_path, model, device, class_names, transform):
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model_path = 'resnet18_inflamation_best.pth'
-    class_names = ['inflamed', 'noninflamed']  # Update this with your actual class names
+    class_names = ['inflamed', 'noninflamed']  # Update this with relevant class names
 
     transform = transforms.Compose([
         transforms.Resize((224, 224)),

@@ -27,7 +27,7 @@ def augment_and_save_images(folder_path, folder_name):
 
 if __name__ == "__main__":
     main_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset_dir = os.path.join(main_dir, "../2HE")
+    dataset_dir = os.path.join(main_dir, "../data/dataset_inflamation")
 
     if os.path.exists(dataset_dir) and os.path.isdir(dataset_dir):
         for folder_name in os.listdir(dataset_dir):

@@ -1,12 +1,12 @@
 import os
 
-# Directory where the images are stored
+# Directory where images are stored
 base_dir = 'C:/Users/tomhe/Desktop/QuPath-Antrum-Corpus-Final/tiles'
 
-# Initialize a dictionary to store the count of each class
+# count of each class
 class_counts = {}
 
-# Initialize a counter for the total number of images
+# counter for the total number of images
 total_images = 0
 
 # Iterate over each sub-directory

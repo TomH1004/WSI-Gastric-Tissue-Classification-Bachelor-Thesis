@@ -37,7 +37,7 @@ def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model_path = '../models/antrum_corpus_final.pth'
     class_names = ['antrum', 'corpus', 'intermediate']
-    num_classes = 2  # Corrected to 2, as the model classifies between "antrum" and "corpus"
+    num_classes = 2  # model classifies between "antrum" and "corpus"
     transform = transforms.Compose([
         #transforms.Resize((299, 299), antialias=True),
         transforms.ToTensor(),

@@ -28,7 +28,6 @@ for dir_name in os.listdir(base_dir):
                         data = np.array(img)
 
                         # Count the white (also shades of whites)
-                        # pixels (Here, [200,200,200] is the threshold for white, can change as per need)
                         white_pixels = np.sum(data > [200, 200, 200])
                         total_pixels = np.prod(data.shape)
 

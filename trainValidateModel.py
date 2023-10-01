@@ -128,7 +128,6 @@ def main():
             epoch_loss = running_loss / dataset_sizes[phase]
             epoch_acc = corrects.double() / dataset_sizes[phase]
 
-            # After the batch loop, compute ROC and AUC metrics
             true_labels = np.array(true_labels).reshape(-1)
             output_probs = np.array(output_probs)
 
