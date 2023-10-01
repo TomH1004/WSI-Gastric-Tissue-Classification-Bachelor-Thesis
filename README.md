@@ -7,8 +7,7 @@ This repository contains the codebase for a project focused on the classificatio
 The project is structured as follows:
 - 📁 **Project Root Directory**
     - 📁 **data**
-        - 📁 **dataset**
-        - 📁 ** gastric**
+        - 📁 **gastric**
             -  📁 **dataset**
             -  📁 **dataset_validation**
             -  📁 **dataset_test**
