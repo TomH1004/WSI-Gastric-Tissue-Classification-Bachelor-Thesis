@@ -13,14 +13,16 @@ The project is structured as follows:
         - 📁 **dataset_inflamation**
         - 📁 **dataset_inflamation_validation**
         - 📁 **dataset_inflamation_test**
-        - 📁 **wsi_test**
-        - 📁 **wsi_inflamation_test**
+        - 📁 **wsi_test** (dataset of WSI's used for evaluating WSI performance on gastric classification)
+        - 📁 **wsi_inflamation_test** (dataset of WSI's used for evaluating WSI performance on inflammation classification)
     - 📁 **csv**
         - 📄 (multiple CSV files)
     - 📁 **evaluation**
         - 📄 (multiple scripts for testing purposes)
     - 📁 **models**
         - 📄 (all trained models)
+    - 📁 **datamangement**
+        - 📄 (multiple scripts to manage the data)
     - 📄 **classifyFiles.py**
     - 📄 **classifyWSI.py**
     - 📄 **classifyInflamedWSI.py**
@@ -42,6 +44,18 @@ The `evaluation` directory contains multiple scripts that are used for testing p
 - `testModel.py`: Evaluates the performance of the model on the tiles from the test set.
 - `testWSI.py`: Evaluates performance on WSI-level for test set on gastric region classification.
 - `testWSI_inflammation.py`: Does the same but for inflammation classifications.
+
+## Datamanagenment Scripts
+The `datamanagement` directory contains multiple scripts that are used for managing the datasets.
+- `clearAugmentedImages.py`: Removes all augmented images from set dataset.
+- `countClasses.py`: Counts the number of images per class in set directory.
+- `countImages.py`: Same as `countClasses.py`, but for set training, validation and test directories.
+- `dataAugmentation.py`: Creates augmented images (rotations) for set directory.
+- `deleteEmptyFolders.py`: Deletes all empty folders in a set directory.
+- `removeEmptyImages.py`: Removes all images in set directory that are 90% white (or near white).
+- `sortDataset.py`: Sorts dataset based on `dataset_split.csv` given a directory with all exported tiles (from QuPath project).
+- `sortImagesCells.py`: Sorts all images in set directory into `antrum` and `corpus`.
+- `sortImagesInflamation.py`: Sorts all images in set directory into `inflamed` and `noninflamed` folders.
 
 ## Models
 The `models` directory houses all the trained models used for gastric region classification and inflammatory classification. These models have been trained and validated using the datasets provided in the respective dataset directories.
