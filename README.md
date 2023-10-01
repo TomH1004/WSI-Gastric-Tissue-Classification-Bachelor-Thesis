@@ -8,13 +8,16 @@ The project is structured as follows:
 - 📁 **Project Root Directory**
     - 📁 **data**
         - 📁 **dataset**
-        - 📁 **dataset_validation**
-        - 📁 **dataset_test**
-        - 📁 **dataset_inflamation**
-        - 📁 **dataset_inflamation_validation**
-        - 📁 **dataset_inflamation_test**
+        - 📁 ** gastric**
+            -  📁 **dataset**
+            -  📁 **dataset_validation**
+            -  📁 **dataset_test**
+        - 📁 **inflammation**
+            - 📁 **dataset_inflammation**
+            - 📁 **dataset_inflammation_validation**
+            - 📁 **dataset_inflammation_test**
         - 📁 **wsi_test** (dataset of WSI's used for evaluating WSI performance on gastric classification)
-        - 📁 **wsi_inflamation_test** (dataset of WSI's used for evaluating WSI performance on inflammation classification)
+        - 📁 **wsi_inflammation_test** (dataset of WSI's used for evaluating WSI performance on inflammation classification)
     - 📁 **csv**
         - 📄 (multiple CSV files)
     - 📁 **evaluation**
@@ -55,7 +58,7 @@ The `datamanagement` directory contains multiple scripts that are used for manag
 - `removeEmptyImages.py`: Removes all images in set directory that are 90% white (or near white).
 - `sortDataset.py`: Sorts dataset based on `dataset_split.csv` given a directory with all exported tiles (from QuPath project).
 - `sortImagesCells.py`: Sorts all images in set directory into `antrum` and `corpus`.
-- `sortImagesInflamation.py`: Sorts all images in set directory into `inflamed` and `noninflamed` folders.
+- `sortImagesInflammation.py`: Sorts all images in set directory into `inflamed` and `noninflamed` folders.
 
 ## Models
 The `models` directory houses all the trained models used for gastric region classification and inflammatory classification. These models have been trained and validated using the datasets provided in the respective dataset directories.
